@@ -121,6 +121,9 @@ if __name__ == '__main__':
 
     model = load_model(args.model)
 
+    import tensorflow as tf
+    gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.3)
+
     if args.image_folder != '':
         print("Creating image folder at {}".format(args.image_folder))
         if not os.path.exists(args.image_folder):
