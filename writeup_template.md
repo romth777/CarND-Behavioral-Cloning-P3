@@ -164,6 +164,7 @@ These efforts are summarized in DataProcessing.ipynb, so please refer to that.
 
 I finally randomly shuffled the data set and put 20% of the data into a validation set. 
 
+I was wondering if waving would fit if I changed this value, but it did not seem to be the case.
 
 This time I used Udacity's data set, but I adapted some processing to the image.
 The first one is reverse. I made the image invert horizontally with half probability. At the same time the value of steering wheel operation also took a minus. This is because the image of the dataset was created from information when driving in counterclockwise direction. Therefore, as it is, as the output value of the model is biased toward the left operation, it is because learning operation to the right side is also made by putting the reversed one.

@@ -259,6 +259,8 @@ def train_by_once():
 
     model = model_like_vgg16()
     #model = model_like_nvidia()
+    from keras.utils.vis_utils import plot_model
+    plot_model(model, to_file='model.png', show_shapes=True)
     model.compile(loss='mse', optimizer='adam')
 
     history_object = model.fit(X_train, y_train, validation_split=0.2, shuffle=True, nb_epoch=30, callbacks=[cp_cb, es_cb], batch_size=32)
