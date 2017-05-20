@@ -146,9 +146,9 @@ def generator(samples, batch_size=32):
                 measurement = float(batch_sample[3])
 
                 if idx == 1:  # left
-                    measurement += 0.1
+                    measurement += 0.25
                 elif idx == 2:  # right
-                    measurement -= 0.1
+                    measurement -= 0.25
 
                 if random.randrange(0, 2) == 1:
                     image = cv2.flip(image, 1)
@@ -249,7 +249,7 @@ def train_by_once():
             image = cv2.flip(image, 1)
             measurement = -measurement
 
-        augment_brightness_camera_images(image)
+        image = augment_brightness_camera_images(image)
 
         images.append(image)
         measurements.append(measurement)
